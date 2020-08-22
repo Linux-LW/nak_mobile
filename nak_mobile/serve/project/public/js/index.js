@@ -1,0 +1,14 @@
+//设置默认连接，域名+端口
+axios.defaults.baseURL="http://127.0.0.1:6040";
+//获得数据库的商品
+axios.get("/index/index").then(result=>{
+	console.log(result.data)
+})
+//根据id获取商品详情
+axios.get('index/details',{
+	params:{
+		id:2
+	}
+}).then(result=>{
+	console.log(result.data)
+})
