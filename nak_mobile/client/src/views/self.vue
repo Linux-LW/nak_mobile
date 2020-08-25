@@ -16,7 +16,7 @@
         <!-- 用户操作 -->
         <div class="user-take">
             <div><img src="../../public/userInfo/order.png" alt=""><p>用户订单</p></div>
-            <div><img src="../../public/userInfo/position.png" alt=""><p>位置</p></div>
+            <div @click="position"><img src="../../public/userInfo/position.png" alt=""><p>位置</p></div>
             <div @click="setpwd"><img src="../../public/userInfo/safe.png" alt=""><p>修改密码</p></div>
             <div><img src="../../public/userInfo/self.png" alt=""><p>修改资料</p></div>
         </div>
@@ -64,6 +64,9 @@ export default {
             this.$store.commit("setUname",'')
             this.$store.state.car=[]
             this.$router.push('/')
+        },
+        position(){
+            this.$router.push('/position')
         }
     },
     components:{

@@ -9,7 +9,7 @@ export default new Vuex.Store({
   state: {
     uname:localStorage.getItem("uname")||'',
     car:JSON.parse(localStorage.getItem('car')) || [],
-    phone:'null',
+    uid:localStorage.getItem("uid")||'',
     password:localStorage.getItem("upwd")||''
   },
   mutations: {
@@ -42,9 +42,11 @@ export default new Vuex.Store({
         
      if(res.data!=0){
        //! 说明有数据返回，那么我就把这个用户的姓名保存在state里面
-       context.commit('setUname',res.data.result.uname);
-      context.commit('setUpwd',res.data.result.upwd)
-       router.push('/')
+      context.commit('setUname',res.data.result.uname);
+      context.commit('setUpwd',res.data.result.upwd);
+      localStorage.setItem("uid",res.data.result.id)
+      
+       router.push('/');
      }else{
        alert("登陆失败，请检查用户名或密码")
      }

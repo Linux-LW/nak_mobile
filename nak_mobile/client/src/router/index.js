@@ -60,6 +60,15 @@ Vue.use(VueRouter)
   path:'/setpwd',
   name:'SetPwd',
   component:()=>import('../views/setpwd.vue')
+ },
+ {
+   path:'/position',
+   name:'Position',
+   component:()=>import('../views/position.vue')
+ },
+ {
+   path:"/addAddress",
+   component:()=>import('../views/addAddress.vue')
  }
 ]
 

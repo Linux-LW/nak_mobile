@@ -13,6 +13,9 @@ import MintUI from "mint-ui";
 import "mint-ui/lib/style.min.css";
 Vue.use(MintUI)
 
+import Vant from 'vant';
+import 'vant/lib/index.css';
+Vue.use(Vant);
 
 Vue.config.productionTip = false
 

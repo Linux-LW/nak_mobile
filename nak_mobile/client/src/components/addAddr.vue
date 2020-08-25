@@ -1,7 +1,7 @@
 <template>
-  <div class="login">
+  <div>
     <div class="userlog">
-      <mt-header title="用户登录">
+      <mt-header title="添加收货地址">
         <router-link to slot="left">
           <mt-button icon="back" @click="goback">返回</mt-button>
         </router-link>
@@ -38,33 +38,18 @@
         </li>
       </ul>
     </div>
-    <div class="logincontent">
-      <mt-field label="用户名*:" placeholder="请输入用户名" v-model="username"></mt-field>
-      <mt-field label="密码*:" placeholder="请输入密码" type="password" v-model="password"></mt-field>
-      <mt-field label="验证码" placeholder="请输入验证码"></mt-field>
-      <mt-button type="primary" size="large" @click.native="login">立即登录</mt-button>
-      <p class="take">
-        <span>忘记密码</span>
-        <span @click="toRegist">免费注册</span>
-      </p>
-    </div>
   </div>
 </template>
 
 <script>
-import { Header, Button, Field } from "mint-ui";
-import { mapActions } from "vuex";
 export default {
   data() {
     return {
       tap: false,
       tapcount: 0,
-      username: "",
-      password: "",
     };
   },
   methods: {
-    ...mapActions(["submit"]),
     toMine() {
       if (this.$store.state.uname != "") {
         //这里如果用户已经登录，就可以访问个人中心页面
@@ -80,29 +65,6 @@ export default {
       } else {
         this.$router.push("/login");
       }
-    },
-    myLogin() {
-      this.submit({
-        username: this.username,
-        password: this.password,
-      }).then(() => {
-        //登陆之后把用户名保存在本地存储以及本地缓存
-        localStorage.setItem("uname", this.username);
-        sessionStorage.setItem("uname", this.username);
-        localStorage.setItem("upwd", this.password);
-        sessionStorage.setItem("upwd", this.password);
-        localStorage.setItem("uid", this.id);
-      });
-    },
-    login() {
-      if (this.username == "" || this.password == "") {
-        alert(`请输入账号或密码`);
-      } else {
-        this.myLogin();
-      }
-    },
-    toRegist() {
-      this.$router.push("/regist");
     },
     goback() {
       this.$router.go(-1);
@@ -121,31 +83,6 @@ export default {
 </script>
 
 <style scoped>
-.take {
-  text-align: end;
-  font-size: 14px;
-  margin-top: 10px;
-  color: #555555;
-}
-.take > span:last-child {
-  margin-left: 10px;
-}
-.logincontent {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 0 8px 0 8px;
-}
-.mint-button {
-  margin-top: 10px;
-}
-.login {
-  height: 100vh;
-  background-color: #f7f7f7;
-}
-.mint-field {
-  border: 1px solid #e3e3e3;
-  margin-top: 10px;
-}
 .mint-header {
   height: 51px;
   font-size: 18px;
