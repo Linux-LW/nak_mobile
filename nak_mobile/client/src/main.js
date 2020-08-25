@@ -3,6 +3,10 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import axios from 'axios'
+import Top from './components/backTop.vue'
+import qs from 'qs'
+
+Vue.component("Top",Top)
 
 Vue.prototype.axios=axios;
 axios.defaults.baseURL='http://localhost:3001'
