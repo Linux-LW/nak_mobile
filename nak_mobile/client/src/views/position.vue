@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       address: true,
-      addInfo:[]
+      addInfo: [],
     };
   },
   methods: {
@@ -38,7 +38,7 @@ export default {
       .get(`/addr/watch?userId=${localStorage.getItem("uid")}`)
       .then((res) => {
         // console.log(res.data);
-        this.addInfo=res.data
+        this.addInfo = res.data;
       });
   },
 };
@@ -55,8 +55,8 @@ export default {
   background-color: #fff;
   margin-bottom: 5px;
 }
-.addInfo>dd:last-child{
-  font-size: 12px;
+.addInfo > dd:last-child {
+  font-size: 0.75rem;
 }
 .position {
   background-color: #f7f7f7;
@@ -64,7 +64,7 @@ export default {
 }
 .putNewAddress {
   box-sizing: border-box;
-  padding: 0 5px;
-  margin-top: 15px;
+  padding: 0 0.3125rem;
+  margin-top: 0.9375rem;
 }
 </style>

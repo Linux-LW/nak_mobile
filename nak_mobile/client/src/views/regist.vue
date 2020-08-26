@@ -42,7 +42,7 @@
     <div class="registform">
       <mt-field label="用户名*：" placeholder="请输入用户名" v-model="username"></mt-field>
       <mt-field label="密码*：" placeholder="请输入登录密码" type="password" v-model="password"></mt-field>
-      <mt-field label="密码*：" placeholder="请输入确认密码" type="password" v-model="repassword"></mt-field>
+      <mt-field label="确认密码*：" placeholder="请输入确认密码" type="password" v-model="repassword"></mt-field>
       <mt-field label="邮箱*：" placeholder="请输入电子邮箱" type="email" v-model="email"></mt-field>
       <mt-field label="验证码*：" placeholder="请输入验证码"></mt-field>
       <dd>
@@ -185,10 +185,15 @@ export default {
     },
     upwd_check() {
       let upwd = this.password;
-      let pwdRegExp = /^[0-9a-zA-Z]{6,15}$/;
+      // let pwdRegExp = /^[0-9a-zA-Z]{6,15}$/;
+      // 利用0宽断言增强密码强度
+      //1.首先，不能全是数字和小写字母组成
+      //2.其次，不能全是字母组成
+      //3.规定长度为6-15位
+      let pwdRegExp = /^(?![0-9a-z]+$)(?![a-zA-Z]+$)[0-9a-zA-Z]{6,15}$/;
       if (!pwdRegExp.test(upwd)) {
         Toast({
-          message: "密码格式错误，请输入6~15位",
+          message: "请输入至少一位大写字母,长度为6-15位",
           position: "center",
           duration: 1000,
         });
@@ -248,34 +253,34 @@ export default {
 
 <style socped>
 .registform > dd {
-  margin-top: 10px;
-  margin-bottom: 15px;
+  margin-top: 0.625rem;
+  margin-bottom: 0.9375rem;
 }
 .mint-field {
-  border-top: 1px solid #f7f7f0;
-  border-bottom: 1px solid #e7e7e7;
+  border-top: 0.0625rem solid #f7f7f0;
+  border-bottom: 0.0625rem solid #e7e7e7;
 }
 .registform {
-  padding: 0 10px;
+  padding: 0 0.625rem;
 }
 .mint-header {
-  height: 51px;
-  font-size: 18px;
+  height: 3.1875rem;
+  font-size: 1.125rem;
 }
 .show {
-  height: 60px !important;
+  height: 3.75rem !important;
 }
 .nav {
   height: 0;
   overflow: hidden;
   background-color: white;
-  border-bottom: 0.5px solid #e3e3e3;
+  border-bottom: 0.0313rem solid #e3e3e3;
 }
 .nav > ul {
   width: 100%;
   display: flex;
   box-sizing: border-box;
-  padding: 5px 0 10px 0;
+  padding: 0.3125rem 0 0.625rem 0;
 }
 .nav > ul > li {
   justify-content: space-around;

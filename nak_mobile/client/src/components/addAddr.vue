@@ -84,11 +84,11 @@ export default {
 
 <style scoped>
 .mint-header {
-  height: 51px;
-  font-size: 18px;
+  height: 3.1875rem;
+  font-size: 1.125rem;
 }
 .show {
-  height: 60px !important;
+  height: 3.75rem !important;
 }
 .nav {
   height: 0;
@@ -100,7 +100,7 @@ export default {
   width: 100%;
   display: flex;
   box-sizing: border-box;
-  padding: 5px 0 10px 0;
+  padding: 0.3125rem 0 0.625rem 0;
 }
 .nav > ul > li {
   justify-content: space-around;

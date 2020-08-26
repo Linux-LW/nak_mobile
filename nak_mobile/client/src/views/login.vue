@@ -123,20 +123,20 @@ export default {
 <style scoped>
 .take {
   text-align: end;
-  font-size: 14px;
-  margin-top: 10px;
+  font-size: 0.875rem;
+  margin-top: 0.625rem;
   color: #555555;
 }
 .take > span:last-child {
-  margin-left: 10px;
+  margin-left: 0.625rem;
 }
 .logincontent {
   width: 100%;
   box-sizing: border-box;
-  padding: 0 8px 0 8px;
+  padding: 0 0.5rem 0 0.5rem;
 }
 .mint-button {
-  margin-top: 10px;
+  margin-top: 0.625rem;
 }
 .login {
   height: 100vh;
@@ -144,14 +144,14 @@ export default {
 }
 .mint-field {
   border: 1px solid #e3e3e3;
-  margin-top: 10px;
+  margin-top: 0.625rem;
 }
 .mint-header {
-  height: 51px;
-  font-size: 18px;
+  height: 3.1875rem;
+  font-size: 1.125rem;
 }
 .show {
-  height: 60px !important;
+  height: 3.75rem !important;
 }
 .nav {
   height: 0;
@@ -163,7 +163,7 @@ export default {
   width: 100%;
   display: flex;
   box-sizing: border-box;
-  padding: 5px 0 10px 0;
+  padding: 0.3125rem 0 0.625rem 0;
 }
 .nav > ul > li {
   justify-content: space-around;

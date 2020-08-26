@@ -13,18 +13,18 @@
 }
 .toTop>a{
     display: block;
-    width: 20px;height: 20px;
+    width: 1.25rem;height: 1.25rem;
     background-image: url("../assets/totop.png");
     background-repeat: no-repeat;
     background-position:center;
 }   
  .toTop{
-     width: 20px;height: 20px;
+     width: 1.25rem;height: 1.25rem;
      background-color:rgb(125,125,125,0.2);
-     box-shadow: 0 0 10px gray;
+     box-shadow: 0 0 0.625rem gray;
     position: fixed;
      z-index: 1;
-    bottom: 100px;right: 20px;
+    bottom: 6.25rem;right: 1.25rem;
     }
 </style>
 
