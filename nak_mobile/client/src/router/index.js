@@ -74,6 +74,12 @@ Vue.use(VueRouter)
    path:"/addAddress",
    component:()=>import('../views/addAddress.vue'),
    meta:{guard:true}
+ },
+ {
+   path:'/order',
+   name:'Order',
+   component:()=>import('../views/order.vue'),
+   meta:{guard:true}
  }
 ]
 

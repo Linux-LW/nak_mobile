@@ -1,6 +1,6 @@
 <template>
   <div class="position">
-    <posited></posited>
+    <MyHeader :title="title"></MyHeader>
     <div v-if="address">
       <div class="addInfo" v-for="(i,k) in addInfo" :key="k">
         <dd>
@@ -17,12 +17,13 @@
 </template>
 
 <script>
-import posited from "../components/posited";
+import MyHeader from '../components/my-header'
 export default {
   data() {
     return {
       address: true,
       addInfo: [],
+      title:'收货地址'
     };
   },
   methods: {
@@ -31,7 +32,7 @@ export default {
     },
   },
   components: {
-    posited,
+    MyHeader
   },
   created() {
     this.axios

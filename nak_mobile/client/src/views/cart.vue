@@ -1,11 +1,13 @@
 <template>
   <div class="shopcar">
-    <MyHeader></MyHeader>
+    <MyHeader :title="title"></MyHeader>
     <div v-if="this.$store.state.car.length>=1">
       <div class="head-box">
         <p>
           共{{this.$store.state.car.length}}种商品，总价(不含运费)
-          <span style="color:orange;font-size:16px;font-weight:600">￥{{total.toFixed(2)}}元</span>
+          <span
+            style="color:orange;font-size:16px;font-weight:600"
+          >￥{{total.toFixed(2)}}元</span>
         </p>
       </div>
       <div class="shopList">
@@ -133,7 +135,7 @@
 import MyHeader from "../components/my-header";
 export default {
   data() {
-    return { count: 1 };
+    return { count: 1, title: "购物车" };
   },
   created() {},
   methods: {

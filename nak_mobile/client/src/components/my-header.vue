@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="userlog">
-            <mt-header title="购物车">
+            <mt-header :title="title">
                 <router-link to="" slot="left" >
                 <mt-button icon="back" @click="goback">返回</mt-button>
                 </router-link>
@@ -41,6 +41,7 @@
 
 <script>
 export default {
+  props:['title'],
   data() {
     return {
       tap:false,

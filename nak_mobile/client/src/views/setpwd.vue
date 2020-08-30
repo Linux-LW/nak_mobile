@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Pwd></Pwd>
+    <MyHeader :title="title"></MyHeader>
     <div class="pwd">
       <mt-field label="原密码*:" placeholder="请输入密码" type="password" v-model="pwd"></mt-field>
       <mt-field label="新密码*:" placeholder="请输入密码" type="password" v-model="new_pwd"></mt-field>
@@ -28,7 +28,7 @@
 </style>
 
 <script>
-import Pwd from "../components/Pwd";
+import MyHeader from "../components/my-header";
 import qs from "qs";
 export default {
   data() {
@@ -39,6 +39,7 @@ export default {
       flag_1: false,
       flag_2: false,
       flag_3: false,
+      title:'修改密码'
     };
   },
   methods: {
@@ -94,7 +95,7 @@ export default {
     },
   },
   components: {
-    Pwd,
+    MyHeader
   },
 };
 </script>

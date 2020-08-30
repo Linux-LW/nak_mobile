@@ -1,6 +1,6 @@
 <template>
   <div class="mine">
-    <Mine></Mine>
+    <MyHeader :title="title"></MyHeader>
     <div class="user-header">
       <div class="user-info">
         <div class="avatar">
@@ -104,10 +104,10 @@
 </style>
 
 <script>
-import Mine from "../components/Mine";
+import MyHeader from '../components/my-header'
 export default {
   data() {
-    return {};
+    return {title:'个人中心'};
   },
   methods: {
     setpwd() {
@@ -125,7 +125,7 @@ export default {
     },
   },
   components: {
-    Mine,
+    MyHeader,
   },
 };
 </script>

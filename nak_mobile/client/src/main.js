@@ -5,6 +5,7 @@ import store from './store'
 import axios from 'axios'
 import Top from './components/backTop.vue'
 import qs from 'qs'
+import "@babel/polyfill"
 
 Vue.component("Top", Top)
 
