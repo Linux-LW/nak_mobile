@@ -108,20 +108,11 @@ export default {
       this.$router.push(`/details/${id}`);
     },
     toMine() {
-      if (this.$store.state.uname != "") {
-        //这里如果用户已经登录，就可以访问个人中心页面
-        this.$router.push("/self");
-      } else {
-        this.$router.push("/login");
-      }
+      //这里如果用户已经登录，就可以访问个人中心页面
+      this.$router.push("/self");
     },
     toCart() {
-      if (this.$store.state.uname != "") {
-        //这里如果用户已经登录，就可以访问购物车页面
-        this.$router.push("/cart");
-      } else {
-        this.$router.push("/login");
-      }
+      this.$router.push("/cart");
     },
     toSearch() {
       this.$router.push("/search");
@@ -253,7 +244,7 @@ export default {
 .navbar > ul {
   display: flex;
   box-sizing: border-box;
-  width:100%;
+  width: 100%;
 }
 .navbar > ul > li + li {
   border-left: 0;

@@ -46,7 +46,7 @@
             时间
             <img src="../assets/proIcons/up.png" alt />
           </li>
-        </ul>
+        </ul> 
       </div>
     </div>
     <table></table>
@@ -181,20 +181,10 @@ export default {
   },
   methods: {
     toMine() {
-      if (this.$store.state.uname != "") {
-        //这里如果用户已经登录，就可以访问个人中心页面
-        this.$router.push("/self");
-      } else {
-        this.$router.push("/login");
-      }
+      this.$router.push("/self");
     },
     toCart() {
-      if (this.$store.state.uname != "") {
-        //这里如果用户已经登录，就可以访问购物车页面
-        this.$router.push("/cart");
-      } else {
-        this.$router.push("/login");
-      }
+      this.$router.push("/cart");
     },
     toDetails(id) {
       this.$router.push(`/details/${id}`);

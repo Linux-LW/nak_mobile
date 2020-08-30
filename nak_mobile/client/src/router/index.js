@@ -48,26 +48,32 @@ Vue.use(VueRouter)
  {
    path:'/self',
    name:'Self',
-   component:()=>import('../views/self.vue')
+   component:()=>import('../views/self.vue'),
+   //给个人中心设置路由守卫
+   meta:{guard:true}
  },
  {
    path:'/cart',
    name:'Cart',
-   component:()=>import('../views/cart.vue')
+   component:()=>import('../views/cart.vue'),
+   meta:{guard:true}
  },
  {
   path:'/setpwd',
   name:'SetPwd',
-  component:()=>import('../views/setpwd.vue')
+  component:()=>import('../views/setpwd.vue'),
+  meta:{guard:true}
  },
  {
    path:'/position',
    name:'Position',
-   component:()=>import('../views/position.vue')
+   component:()=>import('../views/position.vue'),
+   meta:{guard:true}
  },
  {
    path:"/addAddress",
-   component:()=>import('../views/addAddress.vue')
+   component:()=>import('../views/addAddress.vue'),
+   meta:{guard:true}
  }
 ]
 
